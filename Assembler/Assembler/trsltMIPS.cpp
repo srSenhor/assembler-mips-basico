@@ -344,90 +344,144 @@ int translateInstruction(string& termo, ifstream& fin, symb symbTab[], const int
 int codigoReg(string& reg)
 {
 
-	char num[2]{};	//String que vai ser usada no stoi sem que eu altere o parÂmetro "reg"
-	bool teste = true;	//Booleana se o numero que do registrador ja foi encontrado
-	for (int i = 0; teste; i++)
-		if (isdigit(reg[i]))
+	char registrador[5]{};	//String que vai ser usada no stoi sem que eu altere o parÂmetro "reg"
+	for (int i = 0, j = 0; i < reg.length(); i++)
+		if (isalnum(reg[i]))
 		{
-			num[0] = reg[i];
-			teste = false;
+			registrador[j] = reg[i];
+			j++;
 		}
-
-	if (reg[0] == 't' || reg[1] == 't')	//Se for um registrador t
+	if (isdigit(registrador[0]))
+		return stoi(registrador, nullptr, 10);
+	else if (registrador[0] == 'z')
+		return 0;
+	else
 	{
+		char num[2]{};
+		num[0] = registrador[1];
 		int regNum = stoi(num, nullptr, 10);
-
-		switch (regNum)
+		if (registrador[0] == 'v')
 		{
-		case 0:
-			return 8;
-			break;
-		case 1:
-			return 9;
-			break;
-		case 2:
-			return 10;
-			break;
-		case 3:
-			return 11;
-			break;
-		case 4:
-			return 12;
-			break;
-		case 5:
-			return 13;
-			break;
-		case 6:
-			return 14;
-			break;
-		case 7:
-			return 15;
-			break;
-		case 8:
-			return 24;
-			break;
-		case 9:
-			return 25;
-			break;
-		default:
-			std::cout << "Nao existe tal registrador" << endl;
-			exit(EXIT_FAILURE);
+			switch (regNum)
+			{
+			case 0:
+				return 2;
+				break;
+			case 1:
+				return 3;
+				break;
+			default:
+				std::cout << "Nao existe tal registrador" << endl;
+				exit(EXIT_FAILURE);
+			}
 		}
-	}
-	else if (reg[0] == 's' || reg[1] == 's')	//Se for um registrador s
-	{
-		int regNum = stoi(num, nullptr, 10);
-
-		switch (regNum)
+		else if (registrador[0] == 'a')
 		{
-		case 0:
-			return 16;
-			break;
-		case 1:
-			return 17;
-			break;
-		case 2:
-			return 18;
-			break;
-		case 3:
-			return 19;
-			break;
-		case 4:
-			return 20;
-			break;
-		case 5:
-			return 21;
-			break;
-		case 6:
-			return 22;
-			break;
-		case 7:
-			return 23;
-			break;
-		default:
-			std::cout << "Nao existe tal registrador" << endl;
-			exit(EXIT_FAILURE);
+			switch (regNum)
+			{
+			case 0:
+				return 4;
+				break;
+			case 1:
+				return 5;
+				break;
+			case 2:
+				return 6;
+				break;
+			case 3:
+				return 7;
+				break;
+			default:
+				std::cout << "Nao existe tal registrador" << endl;
+				exit(EXIT_FAILURE);
+			}
 		}
+		else if (registrador[0] == 't')	//Se for um registrador t
+		{
+			switch (regNum)
+			{
+			case 0:
+				return 8;
+				break;
+			case 1:
+				return 9;
+				break;
+			case 2:
+				return 10;
+				break;
+			case 3:
+				return 11;
+				break;
+			case 4:
+				return 12;
+				break;
+			case 5:
+				return 13;
+				break;
+			case 6:
+				return 14;
+				break;
+			case 7:
+				return 15;
+				break;
+			case 8:
+				return 24;
+				break;
+			case 9:
+				return 25;
+				break;
+			default:
+				std::cout << "Nao existe tal registrador" << endl;
+				exit(EXIT_FAILURE);
+			}
+		}
+		else if (reg[0] == 's')	//Se for um registrador s
+		{
+			switch (regNum)
+			{
+			case 0:
+				return 16;
+				break;
+			case 1:
+				return 17;
+				break;
+			case 2:
+				return 18;
+				break;
+			case 3:
+				return 19;
+				break;
+			case 4:
+				return 20;
+				break;
+			case 5:
+				return 21;
+				break;
+			case 6:
+				return 22;
+				break;
+			case 7:
+				return 23;
+				break;
+			default:
+				std::cout << "Nao existe tal registrador" << endl;
+				exit(EXIT_FAILURE);
+			}
+		}
+		else if (!strcmp(registrador, "at"))
+			return 1;
+		else if (!strcmp(registrador, "k0"))
+			return 26;
+		else if (!strcmp(registrador, "k1"))
+			return 27;
+		else if (!strcmp(registrador, "gp"))
+			return 28;
+		else if (!strcmp(registrador, "sp"))
+			return 29;
+		else if (!strcmp(registrador, "fp"))
+			return 30;
+		else if (!strcmp(registrador, "ra"))
+			return 31;
 	}
 }
 
