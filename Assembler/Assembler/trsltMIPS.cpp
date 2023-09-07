@@ -14,167 +14,167 @@ int translateInstruction(string& termo, ifstream& fin, symb symbTab[], const int
 	if (!strcmp(termo.c_str(), "sll"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.sa = stoi(termo, nullptr, 10);
 		r.funct = 0;
 	}
 	else if (!strcmp(termo.c_str(), "sll"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.sa = stoi(termo, nullptr, 10);
 		r.funct = 2;
 	}
 	else if (!strcmp(termo.c_str(), "jr"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
 		r.funct = 8;
 	}
 	else if (!strcmp(termo.c_str(), "mfhi"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
 		r.funct = 16;
 	}
 	else if (!strcmp(termo.c_str(), "mflo"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
 		r.funct = 18;
 	}
 	else if (!strcmp(termo.c_str(), "mult"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 24;
 	}
 	else if (!strcmp(termo.c_str(), "multu"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 25;
 	}
 	else if (!strcmp(termo.c_str(), "div"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 26;
 	}
 	else if (!strcmp(termo.c_str(), "divu"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 27;
 	}
 	else if (!strcmp(termo.c_str(), "add"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 32;
 	}
 	else if (!strcmp(termo.c_str(), "addu"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 33;
 	}
 	else if (!strcmp(termo.c_str(), "sub"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 34;
 	}
 	else if (!strcmp(termo.c_str(), "subu"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 35;
 	}
 	else if (!strcmp(termo.c_str(), "and"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 36;
 	}
 	else if (!strcmp(termo.c_str(), "or"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 37;
 	}
 	else if (!strcmp(termo.c_str(), "slt"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 42;
 	}
 	else if (!strcmp(termo.c_str(), "sltu"))
 	{
 		r.isInst = true;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 43;
 	}
@@ -182,11 +182,11 @@ int translateInstruction(string& termo, ifstream& fin, symb symbTab[], const int
 	{
 		r.isInst = true;
 		r.opcode = 28;
-		fin >> termo;
+		termo = regString(fin);
 		r.rd = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		r.rt = codigoReg(termo);
 		r.funct = 2;
 	}
@@ -195,98 +195,98 @@ int translateInstruction(string& termo, ifstream& fin, symb symbTab[], const int
 	{
 		i.isInst = true;
 		i.opcode = 4;
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = immediateBranch(symbTab, tamSymbTab, termo.c_str(), linhaAtual);
 	}
 	else if (!strcmp(termo.c_str(), "bne"))
 	{
 		i.isInst = true;
 		i.opcode = 5;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = immediateBranch(symbTab, tamSymbTab, termo.c_str(), linhaAtual);
 	}
 	else if (!strcmp(termo.c_str(), "addi"))
 	{
 		i.isInst = true;
 		i.opcode = 8;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "addiu"))
 	{
 		i.isInst = true;
 		i.opcode = 9;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "slti"))
 	{
 		i.isInst = true;
 		i.opcode = 10;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "sltiu"))
 	{
 		i.isInst = true;
 		i.opcode = 11;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "andi"))
 	{
 		i.isInst = true;
 		i.opcode = 12;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "ori"))
 	{
 		i.isInst = true;
 		i.opcode = 13;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "lui"))
 	{
 		i.isInst = true;
 		i.opcode = 15;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
 		i.rs = 0;
-		fin >> termo;
+		termo = regString(fin);
 		i.addcons = stoi(termo, nullptr, 10);
 	}
 	else if (!strcmp(termo.c_str(), "lw"))
@@ -294,12 +294,12 @@ int translateInstruction(string& termo, ifstream& fin, symb symbTab[], const int
 		i.isInst = true;
 		int constante;
 		i.opcode = 35;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
 		fin >> constante;
 		i.addcons = constante;
 		termo = fin.get();
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
 	}
 	else if (!strcmp(termo.c_str(), "sw"))
@@ -307,12 +307,12 @@ int translateInstruction(string& termo, ifstream& fin, symb symbTab[], const int
 		i.isInst = true;
 		int constante;
 		i.opcode = 43;
-		fin >> termo;
+		termo = regString(fin);
 		i.rt = codigoReg(termo);
 		fin >> constante;
 		i.addcons = constante;
 		termo = fin.get();
-		fin >> termo;
+		termo = regString(fin);
 		i.rs = codigoReg(termo);
 	}
 	// Instruction J ------------------------------------------
@@ -483,6 +483,7 @@ int codigoReg(string& reg)
 		else if (!strcmp(registrador, "ra"))
 			return 31;
 	}
+	exit(EXIT_FAILURE);
 }
 
 int immediateBranch(symb symbTab[], int tam, string label, int nLinha)
@@ -541,4 +542,14 @@ char* IntegerToBinary(int num)
 			binario[j] = '1';
 	binario[32] = 0;
 	return binario;
+}
+
+string regString(ifstream& fin)
+{
+	char c = 0;
+	string reg{};
+	while ((c = fin.get()) && !isblank(c) && !isspace(c) && c != ',' && c != ')')
+		if (!isblank(c) && !isspace(c) && c != '(')
+			reg = reg + c;
+	return reg;
 }

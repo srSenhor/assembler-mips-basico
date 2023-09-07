@@ -35,3 +35,5 @@ int toBinary(RInstruction&);
 int toBinary(IInstruction&);
 int toBinary(JInstruction&);
 char* IntegerToBinary(int);
+string regString(ifstream&);
+//Criar uma função pra ler os registradores mesmo que estejam juntos e separados apenas por virgula
